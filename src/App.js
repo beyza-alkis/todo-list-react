@@ -1,5 +1,8 @@
 import React,{ useState, useEffect } from 'react';
 import { Button, FormControl, Form} from 'react-bootstrap'
+import {ReactComponent as DeleteIcon} from './assets/DeleteIcon.svg'
+import {ReactComponent as EditIcon} from './assets/EditIcon.svg'
+import {ReactComponent as SaveIcon} from './assets/SaveIcon.svg'
   function App() 
   {
     const [todoList, setTodoList] = useState([])
@@ -21,7 +24,7 @@ import { Button, FormControl, Form} from 'react-bootstrap'
         /> 
         <Button className='ms-5' onClick={() => addTodo() }>Add</Button>
         </div>
-        <div className='mt-5 w-50 '>
+        <div className='mt-5 w-50  '>
           {
             todoList.map(
              (todoItem, index) => 
@@ -36,7 +39,9 @@ import { Button, FormControl, Form} from 'react-bootstrap'
                   </label>
                </div>
                <div>
-                 buttons
+                 <EditIcon width={25} height={25} style={ {cursor: 'pointer'}} className='me-2'/>
+                 <SaveIcon width={25} height={25} style={ {cursor: 'pointer'}} className='me-2'/>
+                 <DeleteIcon width={25} height={25} style={ {cursor: 'pointer'}}/> 
                </div>
               </div>
             )
